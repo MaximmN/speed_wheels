@@ -37,6 +37,7 @@ class ProductTest < ActiveSupport::TestCase
 		product.price = 1
 		assert product.valid?
 	end
+=begin
 	# проверка уникальности назватий товара
 	test "product is not valid without a unique title" do
 		# если у товара нет уникального названия, то он недопустим
@@ -51,8 +52,20 @@ class ProductTest < ActiveSupport::TestCase
 
 	end
 
+	# сообщение об ошибке
+	test " product is not valid without a unique title - i18n" do
+		product = Product.new(title:
+		products(:ruby).title,
+		description: "yyy",
+		price:		1,
+		image_url:		"fred.gif")
 
+		assert product.invalid?
 
+		assert_equal [I18n.translate('activerecord.errors.messages.taken')],
+			product.errors[:title]
 
+	end
+=end
 
 end
