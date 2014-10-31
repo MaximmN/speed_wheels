@@ -17,7 +17,7 @@ class ProductTest < ActiveSupport::TestCase
 	end
 #end
 #=end
-# test asserts приемлемости
+	# test asserts приемлемости
 	test "product price must be positive" do
 		# цена товара должна быть положительной
 		product = Product.new(title: "My Book Title",
@@ -37,4 +37,22 @@ class ProductTest < ActiveSupport::TestCase
 		product.price = 1
 		assert product.valid?
 	end
+	# проверка уникальности назватий товара
+	test "product is not valid without a unique title" do
+		# если у товара нет уникального названия, то он недопустим
+		product = Product.new(title: products(:ruby).title,
+			description:		"yyy",
+			price:		1,
+			image_url:		"fred.gif")
+		assert product.invalid?
+
+		assert_equal ["has already been taken"], product.errors[:title]
+		# уже было использовано
+
+	end
+
+
+
+
+
 end
