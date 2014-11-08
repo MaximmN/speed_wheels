@@ -1,35 +1,20 @@
-<!-- было ранеее
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Store</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class= '<%= controller.controller_name %>'>
-
-<%= yield %>
-
-</body>
-</html>
--->
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pragprog Books Online Store</title>
+	<title>Speed Wheels Online Store</title>
 	<%= stylesheet_link_tag "application", media: "all",
 		"data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application",
 		"data-turbolinks-track" => true %>
 	<%= csrf_meta_tag %>
+	<style> 
+		body { background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCdfjMZLpoRRQatwj9zV7hgH5eSken3HG-ixfvWcfXzQSg00M6); } 
+	</style>
 </head>
 <body class="<%= controller.controller_name %>">
 	<div id="banner">
 		<%= image_tag("logo.png") %>
-		<%= @page_title || "Pragmatic Bookshelf" %>
+		<%= @page_title || "Speed Wheels" %>
 	</div>
 	<div id="columns">
 	<div id="side">
@@ -40,10 +25,12 @@
 		<% end %>
 
 		<ul>
-			<li><a href="http://www....">Home</a></li>
-			<li><a href="http://www..../faq">Questions</a></li>
-			<li><a href="http://www..../news">News</a></li>
-			<li><a href="http://www..../contact">Contact</a></li>
+			<li><a href="http://localhost:3000/">Home</a></li>
+			<li><a href="http://localhost:3000/login">Login</a></li>
+			<li><a href="http://www.tyrepress.com/">News</a></li>
+			<li><a href="http://www.migom.by/news/kak_vibrat_zimnyuyu_rezinu/">FAQ</a></li>
+
+			<a href="http://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*http://pogoda.yandex.ru/minsk"><img src="http://info.weather.yandex.net/minsk/4.ru.png" border="0" alt=""/><img width="1" height="1" src="http://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*http://img.yandex.ru/i/pix.gif" alt="" border="0"/></a>
 		</ul>
 
 		<% if session[:user_id] %>

@@ -9,7 +9,7 @@ class OrderNotifier < ActionMailer::Base
   def received(order)
     @order = order
 
-    mail to: order.email, subject: 'Подтверждение заказа в Pragmatic Store'
+    mail to: order.email, subject: 'Подтверждение заказа в Speed Wheels Store'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -20,6 +20,6 @@ class OrderNotifier < ActionMailer::Base
   def shipped(order)
     @order = order
 
-    mail to: order.email, subject: 'Заказ из Pragmatic Store отправлен'
+    mail to: order.email, subject: 'Заказ из Speed Wheels Store отправлен'
   end
 end
